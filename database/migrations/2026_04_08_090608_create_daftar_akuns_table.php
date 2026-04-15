@@ -12,7 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('daftar_akuns', function (Blueprint $table) {
-            $table->id();
+            $table->id('id');
+            $table->string('kode_akun')->unique();
+            $table->string('nama_akun');
+            $table->string('pos_saldo')->nullable();
+            $table->string('pos_laporan')->nullable();
+            $table->unsignedBigInteger('saldo_awal')->default(0);
+            $table->unsignedBigInteger('saldo_akhir')->default(0);
             $table->timestamps();
         });
     }

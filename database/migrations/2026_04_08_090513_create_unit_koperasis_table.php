@@ -12,7 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('unit_koperasis', function (Blueprint $table) {
-            $table->id();
+            $table->id('id');
+            $table->string('nama');
+            $table->string('alamat')->nullable();
             $table->timestamps();
         });
     }

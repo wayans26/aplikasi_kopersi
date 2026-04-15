@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('profile_koperasis', function (Blueprint $table) {
             $table->id();
+            $table->string('nama');
+            $table->string('alamat')->nullable();
+            $table->string('telepon')->nullable();
+            $table->string('email')->nullable();
             $table->timestamps();
         });
     }
